@@ -186,7 +186,6 @@ const generateSector = () => {
         if (worldObj["aspects"][0] === worldObj["aspects"][1]) {
           // re-roll duplicates
           while (worldObj["aspects"][0] === worldObj["aspects"][1]) {
-            console.log("Rerolling for dupe");
             worldObj["aspects"][1] =
               worldAspects[Math.floor(Math.random() * (suitSize * numSuits))];
           }
@@ -276,7 +275,6 @@ const generateTextExport = () => {
   });
   headingRow += "|\n";
 
-  console.log(headingRow);
   content += headingRow;
 
   // add the heading row separator
