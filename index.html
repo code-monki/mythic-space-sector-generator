@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap"
+      rel="stylesheet"
+    />
+    <title>Mythic Space Sector Generator</title>
+  </head>
+  <body class="bg-gray-300">
+    <section id="hero">
+      <div class="flex flex-col justify-center items-center">
+        <h1 class="text-3xl text-center text-black">Mythic Space</h1>
+        <h2 class="text-2xl text-center text-black">Sector Generator</h2>
+      </div>
+    </section>
+
+    <section
+      id="input-form"
+      class="max-w-2xl mt-8 mx-auto flex flex-col bg-gray-100 justify-center items-center"
+    >
+      <form>
+        <div
+          id="input-group"
+          class="flex justify-between items-center gap-4 px-4 mb-4 mt-4"
+        >
+          <input
+            id="sector-name"
+            type="text"
+            size="60"
+            placeholder="Sector Name"
+            class="focus:outline-0 px-2"
+          />
+          <input
+            id="create-sector"
+            type="button"
+            value="Generate"
+            class="text-white bg-black rounded-full px-2 w-24"
+          />
+        </div>
+      </form>
+    </section>
+
+    <section id="output-section" class="hidden">
+      <div class="container mx-auto max-w-2xl">
+        <div id="output-header" class="border-2 border-b-gray-200 mt-8"><h3 id="output-header-h3" class="font-bold text-xl  p-4 bg-gray-100"></h3></div>
+        <div id="sector-output" class="bg-gray-100">
+          <table class="sector-table">
+            <thead>
+              <tr class="bg-gray-300">
+                <th>Loc</th>
+                <th>Biome</th>
+                <th style="width: 45%;">Astronomical Quirk</th>
+                <th>World Aspects</th>
+              </tr>
+            </thead>
+            <tbody id="sector-data" class="px-4">
+            </tbody>
+          </table>
+        </div>
+        <div id="buttons" class="flex justify-center mt-2">
+          <div class="flex justify-between items-center">
+          <button id="text-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Text</button>
+          <button id="csv-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">CSV</button>
+          <button id="json-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">JSON</button>
+          </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sector-table tbody tr {
+  border-bottom: 2px;
+  border-color: rgb(209 213 219);
+  border-style: solid;
+}
+
+.sector-table tbody td {
+  padding: 3px 4px;
+  vertical-align: top;
+}
+
+.center-text {
+  text-align: center;
+}
