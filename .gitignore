@@ -8,3 +8,10 @@
 
 # avoid node module directory
 node_modules/
+
+# unneeded files
+package-lock.json
+scratch.txt
+design.md
+settings.json
+.vscode
