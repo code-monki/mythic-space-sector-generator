@@ -204,6 +204,11 @@ document
   .getElementById("create-sector")
   .addEventListener("click", function createSector(event) {
     event.preventDefault();
+
+    if (sectorName.value.length < 1) {
+      alert("You must enter a sector name");
+      return;
+    }
     sectorData.name = sectorName.value;
     outputHeader.innerText = `Sector: ${sectorName.value}`;
 
