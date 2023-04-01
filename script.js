@@ -350,3 +350,9 @@ document
     // download the file
     downloadFile(content, sectorData.name + " Sector.json");
   });
+
+/****************** Clear Screen ******************/
+document.getElementById("clear-btn").addEventListener("click", (event) => {
+  event.preventDefault();
+  outputSection.classList.add("hidden");
+});
