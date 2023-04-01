@@ -355,5 +355,4 @@ document
 document.getElementById("clear-btn").addEventListener("click", (event) => {
   event.preventDefault();
   outputSection.classList.add("hidden");
-  // console.log("Clearing the screen / hiding output section");
 });
