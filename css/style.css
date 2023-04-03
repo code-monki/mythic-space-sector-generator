@@ -1,5 +1,5 @@
 /*
-! tailwindcss v3.2.7 | MIT License | https://tailwindcss.com
+! tailwindcss v3.3.1 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -31,6 +31,7 @@
 3. Use a more readable tab size.
 4. Use the user's configured `sans` font-family by default.
 5. Use the user's configured `sans` font-feature-settings by default.
+6. Use the user's configured `sans` font-variation-settings by default.
 */
 
 html {
@@ -47,6 +48,8 @@ html {
   /* 4 */
   font-feature-settings: normal;
   /* 5 */
+  font-variation-settings: normal;
+  /* 6 */
 }
 
 /*
@@ -547,6 +550,14 @@ video {
   }
 }
 
+.sticky {
+  position: sticky;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
@@ -588,12 +599,32 @@ video {
   display: none;
 }
 
+.h-screen {
+  height: 100vh;
+}
+
+.h-full {
+  height: 100%;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
 .w-24 {
   width: 6rem;
 }
 
+.w-full {
+  width: 100%;
+}
+
 .max-w-2xl {
   max-width: 42rem;
+}
+
+.grow {
+  flex-grow: 1;
 }
 
 .flex-col {
@@ -602,6 +633,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-start {
+  justify-content: flex-start;
 }
 
 .justify-center {
@@ -634,6 +669,11 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+.bg-blue-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
 .bg-gray-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -642,6 +682,11 @@ video {
 .bg-gray-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+}
+
+.bg-red-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(254 226 226 / var(--tw-bg-opacity));
 }
 
 .p-4 {
@@ -656,6 +701,14 @@ video {
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.pb-4 {
+  padding-bottom: 1rem;
+}
+
+.pt-4 {
+  padding-top: 1rem;
 }
 
 .text-center {
@@ -696,6 +749,18 @@ video {
   overflow-y: auto;
 }
 
+.sector-table {
+  background: #f3f4f6;
+  width: 100%;
+  height: 70vh;
+  overflow-y: auto;
+}
+
+.sector-table thead tr {
+  text-align: center;
+  overflow: auto;
+}
+
 .sector-table thead th {
   opacity: 1;
   position: sticky;
@@ -707,11 +772,38 @@ video {
   border-bottom: 2px;
   border-color: rgb(209 213 219);
   border-style: solid;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
 
 .sector-table tbody td {
-  padding: 3px 4px;
   vertical-align: top;
+  padding: 4px;
+}
+
+.sector-table input {
+  width: 12rem;
+}
+
+.sector-table button {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  border: none;
+  background: none;
+  margin-left: 2px;
+}
+
+.sector-table button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  padding: 0;
+  /* background: rgb(209 213 219); */
+}
+
+.input-group {
+  display: flex;
+  padding: 4px;
 }
 
 .center-text {
