@@ -36,7 +36,7 @@
               type="text"
               size="60"
               placeholder="Sector Name"
-              class="focus:outline-0 px-2"
+              class="focus:outline-0 px-2 grow"
             />
             <input
               id="create-sector"
@@ -49,13 +49,13 @@
       </section>
 
       <section class="h-full">
-        <div id="output-section" class="flex-col grow hidden">
+        <div id="output-section" class="flex-col grow hidden overflow">
         <div class="container mx-auto max-w-960 mt-4">
           <div style="max-width: 64rem; margin: auto">
             <div id="output-header" class="border-2 border-b-gray-200 mt-2">
               <h3 id="output-header-h3" class="font-bold text-xl  p-4 bg-gray-100"></h3>
             </div>
-            <div id="sector-output">
+            <div id="sector-output" class="overflow-x-auto">
             <table id="sector-table" class="sector-table">
               <thead>
                 <tr>
