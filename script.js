@@ -265,7 +265,7 @@ document.getElementById("create-sector").addEventListener("click", (e) => {
     // create random name generator button
     var btnRandName = document.createElement("button");
     btnRandName.innerHTML =
-      '<img src="/img/die.svg" alt="Random Name Generator" />';
+      '<img src="img/die.svg" alt="Random Name Generator" />';
     btnRandName.addEventListener("click", (e) => {
       e.preventDefault();
       // Integrate random name generator function
