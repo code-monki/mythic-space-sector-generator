@@ -14,66 +14,79 @@
     <title>Mythic Space Sector Generator</title>
   </head>
   <body class="bg-gray-300">
-    <section id="hero">
-      <div class="flex flex-col justify-center items-center">
-        <h1 class="text-3xl text-center text-black">Mythic Space</h1>
-        <h2 class="text-2xl text-center text-black">Sector Generator</h2>
-      </div>
-    </section>
-
-    <section
-      id="input-form"
-      class="max-w-2xl mt-8 mx-auto flex flex-col bg-gray-100 justify-center items-center"
-    >
-      <form>
-        <div
-          id="input-group"
-          class="flex justify-between items-center gap-4 px-4 mb-4 mt-4"
-        >
-          <input
-            id="sector-name"
-            type="text"
-            size="60"
-            placeholder="Sector Name"
-            class="focus:outline-0 px-2"
-          />
-          <input
-            id="create-sector"
-            type="button"
-            value="Generate"
-            class="text-white bg-black rounded-full px-2 w-24"
-          />
+    <div class="flex flex-col min-h-screen h-screen">
+      <section id="hero">
+        <div class="flex flex-col justify-center items-center max-h-25">
+          <h1 class="text-3xl text-center text-black">Mythic Space</h1>
+          <h2 class="text-2xl text-center text-black">Sector Generator</h2>
         </div>
-      </form>
-    </section>
+      </section>
 
-    <section id="output-section" class="hidden">
-      <div class="container mx-auto max-w-2xl">
-        <div id="output-header" class="border-2 border-b-gray-200 mt-2"><h3 id="output-header-h3" class="font-bold text-xl  p-4 bg-gray-100"></h3></div>
-        <div id="sector-output" class="bg-gray-100">
-          <table class="sector-table">
-            <thead>
-              <tr>
-                <th>Loc</th>
-                <th>Biome</th>
-                <th style="width: 45%;">Astronomical Quirk</th>
-                <th>World Aspects</th>
-              </tr>
-            </thead>
-            <tbody id="sector-data" class="px-4">
-            </tbody>
-          </table>
-        </div>
-        <div id="buttons" class="flex justify-center mt-2">
-          <div class="flex justify-between items-center">
-          <button id="text-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Text</button>
-          <button id="csv-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">CSV</button>
-          <button id="json-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">JSON</button>
-          <button id="clear-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Clear</button>
+      <section
+        id="input-form"
+        class="max-w-2xl mt-8 mx-auto flex flex-col justify-start bg-gray-100  items-center"
+      >
+        <form>
+          <div
+            id="input-group"
+            class="flex justify-between items-center gap-4 px-4 mb-4 mt-4"
+          >
+            <input
+              id="sector-name"
+              type="text"
+              size="60"
+              placeholder="Sector Name"
+              class="focus:outline-0 px-2"
+            />
+            <input
+              id="create-sector"
+              type="button"
+              value="Generate"
+              class="text-white bg-black rounded-full px-2 w-24"
+            />
           </div>
-        </div>
-    </section>
+        </form>
+      </section>
 
-    <script src="script.js"></script>
+      <section class="h-full">
+        <div id="output-section" class="flex-col grow hidden">
+        <div class="container mx-auto max-w-960 mt-4">
+          <div style="max-width: 64rem; margin: auto">
+            <div id="output-header" class="border-2 border-b-gray-200 mt-2">
+              <h3 id="output-header-h3" class="font-bold text-xl  p-4 bg-gray-100"></h3>
+            </div>
+            <div id="sector-output">
+            <table id="sector-table" class="sector-table">
+              <thead>
+                <tr>
+                  <th style="width: 10%;">Location</th>
+                  <th style="width: 15%;">Name</th>
+                  <th style="width: 15%;">Biome</th>
+                  <th>Astronomical Quirk</th>
+                  <th>World Aspects</th>
+                </tr>
+              </thead>
+            </table>
+            </div>
+          </div>
+      
+          <div id="buttons" class="flex justify-center mt-2">
+            <div class="flex justify-between items-center">
+            <button id="text-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Text</button>
+            <button id="csv-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">CSV</button>
+            <button id="json-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">JSON</button>
+            <button id="clear-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Clear</button>
+            </div>
+            </div>
+          </div>
+      </section>
+
+      <footer>
+        <div class="flex w-full justify-center items-center  pt-4 pb-4 bg-gray-100">
+          <p class="center-text w-full">CodeMonki, 2023</;>
+        </div>
+      </footer>
+    </div>
   </body>
+  <script src="script.js"></script>
 </html>
