@@ -1,0 +1,477 @@
+:root {
+  --color-1: #eee;
+  --color-2: lightgrey;
+  --color-3: #454545;
+  --color-4: #999;
+  --lt-text: #2d3748;
+  --lt-bg: #f7fafc;
+  --lt-border: #a0aec0;
+  --lt-button-text: #f7fafc;
+  --lt-button-bg: #2d3748;
+  --lt-button-hover: #a0aec0;
+  --dk-text: rgba(255, 255, 255, 0.92);
+  --dk-bg: #1a202c;
+  --dk-border: rgba(255, 255, 255, 0.16);
+  --dk-button-text: #1a202c;
+  --dk-button-bg: rgba(255, 255, 255, 0.92);
+  --dk-button-hover: rgba(255, 255, 255, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: 'Roboto Flex', sans-serif;
+  font-size: 1rem;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+}
+
+h1,
+h2 {
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  text-align: center;
+}
+
+button {
+  color: var(--lt-text);
+  background: var(--lt-button);
+  font-weight: bold;
+}
+
+.page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  z-index: 0;
+}
+
+header {
+  background: var(--lt-bg);
+  padding: 1rem 0;
+}
+
+footer {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: 0.5rem 0;
+  justify-self: flex-end;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+}
+
+.data-input-form-container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.data-input-form {
+  display: flex;
+  justify-content: center;
+  background: var(--lt-bg);
+  width: 100%;
+  max-width: 60rem;
+  padding: 0.5rem 0;
+}
+
+.data-input-form input {
+  padding: 0.125rem 0.25rem;
+  margin-right: 0.5rem;
+  outline: 0;
+  border: 0;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  cursor: pointer;
+  border: 1px solid var(--lt-border);
+}
+
+.data-input-form button {
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+}
+
+.data-input-form button:hover {
+  color: var(--dk-text);
+  background: var(--lt-button-hover);
+}
+
+.data-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  height: 100vh;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  overflow-y: auto;
+  background: var(--lt-bg);
+  padding: 0;
+  gap: 0;
+}
+
+.data-list-item {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-bottom: 1px var(--lt-border) solid;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  row-gap: 0;
+}
+
+.data-list-item button {
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 50%;
+  margin: auto;
+  background: transparent;
+  color: var(--lt-text);
+  border: none;
+}
+
+.data-list-item div {
+  padding: 0.25rem;
+  text-align: left;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+}
+
+.data-list-item:first-child,
+.data-list-item div {
+  border: 0;
+}
+
+.data-list-item div:nth-child(1) {
+  grid-area: 1 / 1 / 2 / 2;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* world name */
+.data-list-item div:nth-child(2) {
+  grid-area: 1/ 2 / 2 / 5;
+  font-weight: bold;
+}
+
+/* edit button */
+.data-list-item div:nth-child(3) {
+  grid-area: 1 / 5 / 2 / 5;
+  text-align: right;
+}
+
+/* astronomical quirk */
+.data-list-item div:nth-child(4) {
+  grid-area: 2 / 2 / 3 / 5;
+  text-align: left;
+}
+
+/* world aspects */
+.data-list-item div:nth-child(5) {
+  grid-area: 3 / 2 / 4 / 6;
+  text-align: left;
+}
+
+.data-list-header {
+  color: var(--lt-bg);
+  background: var(--lt-text);
+  font-family: sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+  position: sticky;
+  top: 0;
+  margin: 0;
+}
+
+.data-list-header div {
+  color: var(--lt-bg);
+  background: var(--lt-text);
+  border: 0;
+}
+
+.export-btns-container {
+  display: flex;
+  justify-content: center;
+}
+.export-btns {
+  display: flex;
+  justify-content: center;
+  padding: 0.5rem 0;
+  width: 100%;
+  max-width: 60rem;
+  margin: 0.5rem 0;
+}
+
+.export-btns button {
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  width: 4rem;
+  height: 2rem;
+  margin: 0 0.25rem;
+  border-radius: 1rem;
+}
+
+.export-btns button:disabled {
+  opacity: 0.5;
+}
+
+/************ popup edit dialog ***********/
+.modal-popup-background {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: var(--dk-bg);
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: rgb(0, 0, 0, 0.6);
+  overflow: auto;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1rem;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  color: var(--lt-text);
+  background: var(--lt-bg);
+  width: 100%;
+  max-width: 375px;
+  padding: 1rem;
+}
+
+.edit-form h3 {
+  margin-bottom: 0.5rem;
+}
+
+.edit-input-item {
+  display: flex;
+  flex-direction: column;
+  margin: 0.25rem 0;
+}
+
+.edit-input-item input {
+  border: 0;
+  outline: 0;
+  padding: 0.25rem;
+}
+
+.edit-input-item label {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.edit-input-item select {
+  border: 0;
+  outline: 0;
+  padding: 0.25rem;
+}
+
+.dialog-button-container {
+  display: flex;
+  padding-top: 0.5rem;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 9rem;
+  align-self: flex-end;
+}
+
+.dialog-button-container button {
+  background: var(--lt-button-bg);
+  color: var(--lt-button-text);
+  border-radius: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  width: 4rem;
+}
+
+.dialog-button-container button:hover {
+  color: var(--dk-text);
+  background: var(--lt-button-hover);
+}
+
+/* utility classes */
+.narrow-screen span {
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .data-list-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .data-list-item div:nth-child(1) {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+  }
+
+  /* world name */
+  .data-list-item div:nth-child(2) {
+    grid-area: 1/ 2 / 1 / 5;
+  }
+
+  /* edit button */
+  .data-list-item div:nth-child(3) {
+    grid-area: 1 / 12 / 1 / 12;
+    text-align: right;
+  }
+
+  /* astronomical quirk */
+  .data-list-item div:nth-child(4) {
+    grid-area: 1 / 5 / 1 / 9;
+    text-align: left;
+    display: block;
+  }
+
+  /* world aspects */
+  .data-list-item div:nth-child(5) {
+    grid-area: 1 / 9 / 1 / 12;
+    text-align: left;
+  }
+
+  .narrow-screen {
+    display: none;
+  }
+
+  .edit-form {
+    border-radius: 1rem;
+    width: 30rem;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  h1,
+  h2 {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  button {
+    color: var(--dk-button-text);
+    background: var(--dk-button-bg);
+    border: 0;
+  }
+
+  header {
+    background: var(--dk-bg);
+  }
+
+  footer {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  .page-container {
+    background: var(--dk-bg);
+  }
+
+  .data-input-form {
+    background: var(--dk-bg);
+  }
+
+  .data-input-form button {
+    background: var(--dk-button-bg);
+    color: var(--dk-button-text);
+  }
+
+  .data-input-form button:hover {
+    color: var(--dk-text);
+    background: var(--lt-button-hover);
+  }
+
+  .data-input-form input {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+    border: 1px solid var(--dk-border);
+  }
+
+  .data-container {
+    background: var(--dk-bg);
+    border-bottom: 1px solid var(--dk-border);
+  }
+
+  .data-list-item {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  .data-list-item button {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  .data-list-item div {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+  }
+
+  .data-list-header {
+    color: var(--dk-bg);
+    background: var(--dk-text);
+    border-bottom: 1px solid var(--dk-text);
+  }
+
+  .data-list-header div {
+    color: var(--dk-bg);
+    background: var(--dk-text);
+  }
+
+  .export-btns {
+    background: var(--dk-bg);
+  }
+
+  .mobile-popup {
+    background: var(--dk-bg);
+    opacity: 0.9;
+  }
+
+  .edit-form {
+    color: var(--dk-text);
+    background: var(--dk-bg);
+    opacity: 1;
+  }
+
+  .dialog-button-container button {
+    color: var(--dk-button-text);
+    background: var(--dk-button-bg);
+    cursor: pointer;
+  }
+
+  .dialog-button-container button:hover {
+    color: var(--dk-text);
+    background: var(--dk-button-hover);
+    cursor: pointer;
+  }
+}

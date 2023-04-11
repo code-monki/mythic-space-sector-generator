@@ -4,89 +4,99 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    <link rel="stylesheet" href="css/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Tapestry&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&family=Roboto+Flex:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    <title>Mythic Space Sector Generator</title>
+    <script
+      src="https://kit.fontawesome.com/98c924c274.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
   </head>
-  <body class="bg-gray-300">
-    <div class="flex flex-col min-h-screen h-screen">
-      <section id="hero">
-        <div class="flex flex-col justify-center items-center max-h-25">
-          <h1 class="text-3xl text-center text-black">Mythic Space</h1>
-          <h2 class="text-2xl text-center text-black">Sector Generator</h2>
+  <body>
+    <div class="page-container">
+      <header>
+        <h1>Mythic Space</h1>
+        <h2>Sector Generator</h2>
+      </header>
+      <div class="data-input-form-container">
+        <div class="data-input-form">
+          <input
+            type="text"
+            placeholder="Enter Sector Name"
+            width="20"
+            id="sector-name"
+          />
+          <button id="generate-sector">Generate</button>
         </div>
-      </section>
-
-      <section
-        id="input-form"
-        class="max-w-2xl mt-8 mx-auto flex flex-col justify-start bg-gray-100  items-center"
-      >
-        <form>
-          <div
-            id="input-group"
-            class="flex justify-between items-center gap-4 px-4 mb-4 mt-4"
-          >
-            <input
-              id="sector-name"
-              type="text"
-              size="32"
-              placeholder="Sector Name"
-              class="focus:outline-0 px-2 grow"
-            />
-            <input
-              id="create-sector"
-              type="button"
-              value="Generate"
-              class="text-white bg-black rounded-full px-2 w-24"
-            />
-          </div>
-        </form>
-      </section>
-
-      <section class="h-full">
-        <div id="output-section" class="flex-col grow hidden overflow">
-        <div class="container mx-auto max-w-960 mt-4">
-          <div style="max-width: 64rem; margin: auto">
-            <div id="output-header" class="border-2 border-b-gray-200 mt-2">
-              <h3 id="output-header-h3" class="font-bold text-xl  p-4 bg-gray-100"></h3>
-            </div>
-            <div id="sector-output" class="overflow-x-auto">
-            <table id="sector-table" class="sector-table">
-              <thead>
-                <tr>
-                  <th style="width: 10%;">Location</th>
-                  <th style="width: 15%;">Name</th>
-                  <th style="width: 15%;">Biome</th>
-                  <th>Astronomical Quirk</th>
-                  <th>World Aspects</th>
-                </tr>
-              </thead>
-            </table>
-            </div>
-          </div>
-      
-          <div id="buttons" class="flex justify-center mt-2">
-            <div class="flex justify-between items-center">
-            <button id="text-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Text</button>
-            <button id="csv-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">CSV</button>
-            <button id="json-export-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">JSON</button>
-            <button id="clear-btn" class="rounded-full bg-black text-white w-24 mt-2 mb-2 mr-4">Clear</button>
-            </div>
-            </div>
-          </div>
-      </section>
-
-      <footer>
-        <div class="flex w-full justify-center items-center  pt-4 pb-4 bg-gray-100">
-          <p class="center-text w-full">CodeMonki, 2023</;>
+      </div>
+      <div class="data-container" id="data-container"></div>
+      <div class="export-btns-container">
+        <div class="export-btns">
+          <button id="csv-export-btn" disabled>CSV</button>
+          <button id="json-export-btn" disabled>JSON</button>
+          <button hidden disabled>PDF</button>
+          <button id="text-export-btn" disabled>Text</button>
+          <button id="reset-btn" disabled>Reset</button>
         </div>
-      </footer>
+      </div>
+
+      <footer>CodeMonki &copy; 2023</footer>
+      <div id="modalEditPopup" class="modal-popup-background hidden">
+        <div class="form-container">
+          <form class="edit-form" id="edit-form">
+            <h3 id="edit-location">Location:</h3>
+            <div class="edit-input-item">
+              <label for="edit-name-field">Name: </label>
+              <input
+                type="text"
+                name="edit-world-name"
+                width="20"
+                id="edit-world-name"
+              />
+            </div>
+
+            <div class="edit-input-item">
+              <label for="edit-biome">Biome: </label>
+              <select name="edit-biome" id="edit-biome"></select>
+            </div>
+
+            <div class="edit-input-item">
+              <label for="edit-astronomical-quirk">Astronomical Quirk: </label>
+              <select
+                name="edit-astronomical-quirk"
+                id="edit-astronomical-quirk"
+              ></select>
+            </div>
+
+            <div class="edit-input-item">
+              <label for="edit-world-aspect-select-1">World Aspect 1: </label>
+              <select
+                name="edit-world-aspect-select-1"
+                id="edit-world-aspect-select-1"
+              ></select>
+            </div>
+
+            <div class="edit-input-item">
+              <label for="edit-world-aspect-select-2">World Aspect 2: </label>
+              <select
+                name="edit-world-aspect-select-2"
+                id="edit-world-aspect-select-2"
+              ></select>
+            </div>
+
+            <div class="dialog-button-container">
+              <button type="button" id="cancel-edit">Cancel</button>
+              <button type="submit" id="save-edit">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
   </body>
-  <script src="script.js"></script>
+  <script src="js/scripts.js"></script>
 </html>
